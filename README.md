@@ -12,12 +12,15 @@ and handling stuff like
 Tech/Framework proposals
 
 * [Dropwizard](http://www.dropwizard.io/0.9.2/docs/)
+* [Spring-Boot](http://projects.spring.io/spring-boot/)
+* [Spark](http://sparkjava.com/)
 
 ### Frontend
 
 Part of the system handling the client interface.
 
 * [AngularJS](https://angularjs.org/)
+* [ReactJS](http://reactjs.net/)
 * [Material UI](http://www.material-ui.com/#/)
 
 ### Database
