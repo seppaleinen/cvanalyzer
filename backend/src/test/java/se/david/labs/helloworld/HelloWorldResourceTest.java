@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 public class HelloWorldResourceTest {
     @ClassRule
     public static final DropwizardAppRule<DropwizardConfiguration> RULE =
-            new DropwizardAppRule<DropwizardConfiguration>(DropwizardApplication.class, ResourceHelpers.resourceFilePath("hello-world.yml"));
+            new DropwizardAppRule<DropwizardConfiguration>(DropwizardApplication.class, ResourceHelpers.resourceFilePath("cv.yml"));
 
     @Test
     public void checkHelloWorld_ExpectParameterAsResult() {

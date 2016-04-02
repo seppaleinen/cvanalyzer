@@ -13,7 +13,7 @@ public class DropwizardApplication extends Application<DropwizardConfiguration> 
 
     @Override
     public String getName() {
-        return "hello-world";
+        return "cv";
     }
 
     @Override
