@@ -4,6 +4,7 @@ dependency-reduced-pom.xml
 .mtj.tmp/
 target/
 application*.log
+.DS_Store
 
 # Package Files #
 *.jar

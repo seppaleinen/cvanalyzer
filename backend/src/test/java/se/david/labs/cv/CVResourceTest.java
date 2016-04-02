@@ -8,7 +8,6 @@ import org.junit.ClassRule;
 import org.junit.Test;
 import se.david.labs.DropwizardApplication;
 import se.david.labs.DropwizardConfiguration;
-import se.david.labs.helloworld.domain.Saying;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -34,12 +33,11 @@ public class CVResourceTest {
     }
 
     @Test
-    public void checkHelloWorld_ExpectParameterAsResult() {
+    public void ping_expects_pong() {
         Response response = client.target(
                 String.format("http://localhost:%d/cv/ping", RULE.getLocalPort()))
                 .request()
                 .get();
-
 
         assertEquals(200, response.getStatus());
         assertEquals("pong", response.readEntity(String.class));

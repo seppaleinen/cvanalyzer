@@ -50,16 +50,6 @@
                 <version>2.3</version>
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*.SF</exclude>
-                                <exclude>META-INF/*.DSA</exclude>
-                                <exclude>META-INF/*.RSA</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
                 </configuration>
                 <executions>
                     <execution>
@@ -95,11 +85,26 @@
                         <version>1.1.9</version>
                         <configuration>
                             <targetClasses>
-                                <param>se.david.labs.helloworld.*</param>
+                                <param>se.david.labs.*</param>
                             </targetClasses>
                             <targetTests>
-                                <param>se.david.labs.helloworld.*</param>
+                                <param>se.david.labs.*</param>
                             </targetTests>
+                            <mutators>
+                                <mutator>CONDITIONALS_BOUNDARY</mutator>
+                                <mutator>INCREMENTS</mutator>
+                                <mutator>INVERT_NEGS</mutator>
+                                <mutator>MATH</mutator>
+                                <mutator>NEGATE_CONDITIONALS</mutator>
+                                <mutator>RETURN_VALS</mutator>
+                                <mutator>VOID_METHOD_CALLS</mutator>
+                                <mutator>CONSTRUCTOR_CALLS</mutator>
+                                <mutator>INLINE_CONSTS</mutator>
+                                <mutator>NON_VOID_METHOD_CALLS</mutator>
+                                <mutator>REMOVE_CONDITIONALS</mutator>
+                                <mutator>EXPERIMENTAL_MEMBER_VARIABLE</mutator>
+                                <mutator>EXPERIMENTAL_SWITCH</mutator>
+                            </mutators>
                         </configuration>
                         <executions>
                             <execution>

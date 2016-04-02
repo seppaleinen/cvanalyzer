@@ -11,17 +11,20 @@ import se.david.labs.helloworld.healthchecks.HelloWorldHealthCheck;
 
 public class DropwizardApplication extends Application<DropwizardConfiguration> {
     public static void main(String[] args) throws Exception {
-        new DropwizardApplication().run(args);
-    }
+        String command = "server";
+        String configuration = DropwizardApplication.class.getResource("cv.yml").getPath();
 
-    @Override
-    public String getName() {
-        return "cv";
+        if(args.length > 0) {
+            command = args[0];
+        } if(args.length > 1) {
+            configuration = args[1];
+        }
+
+        new DropwizardApplication().run(command, configuration);
     }
 
     @Override
     public void initialize(Bootstrap<DropwizardConfiguration> bootstrap) {
-
     }
 
     public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment) throws Exception {
@@ -30,7 +33,7 @@ public class DropwizardApplication extends Application<DropwizardConfiguration> 
     }
 
     private void registerResource(Environment environment, final Resource resource, final HealthCheck healthCheck, final String name) {
-        environment.healthChecks().register("template", healthCheck);
+        environment.healthChecks().register(name, healthCheck);
         environment.jersey().register(resource);
     }
 }
