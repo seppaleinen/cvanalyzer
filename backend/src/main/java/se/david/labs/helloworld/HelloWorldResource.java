@@ -1,6 +1,7 @@
 package se.david.labs.helloworld;
 
 import com.codahale.metrics.annotation.Timed;
+import se.david.labs.Resource;
 import se.david.labs.helloworld.domain.Saying;
 
 import javax.ws.rs.GET;
@@ -11,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
-public class HelloWorldResource {
+public class HelloWorldResource implements Resource {
     @GET
     @Timed
     public Saying sayHello(@QueryParam("name") String name) {

@@ -1,8 +1,11 @@
 package se.david.labs;
 
+import com.codahale.metrics.health.HealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import se.david.labs.cv.CVResource;
+import se.david.labs.cv.healthchecks.CVHealthCheck;
 import se.david.labs.helloworld.HelloWorldResource;
 import se.david.labs.helloworld.healthchecks.HelloWorldHealthCheck;
 
@@ -22,9 +25,12 @@ public class DropwizardApplication extends Application<DropwizardConfiguration> 
     }
 
     public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment) throws Exception {
-        final HelloWorldResource helloWorldResource = new HelloWorldResource();
-        final HelloWorldHealthCheck helloWorldHealthCheck = new HelloWorldHealthCheck();
-        environment.healthChecks().register("template", helloWorldHealthCheck);
-        environment.jersey().register(helloWorldResource);
+        registerResource(environment, new HelloWorldResource(), new HelloWorldHealthCheck(), "helloWorld");
+        registerResource(environment, new CVResource(), new CVHealthCheck(), "CV");
+    }
+
+    private void registerResource(Environment environment, final Resource resource, final HealthCheck healthCheck, final String name) {
+        environment.healthChecks().register("template", healthCheck);
+        environment.jersey().register(resource);
     }
 }
