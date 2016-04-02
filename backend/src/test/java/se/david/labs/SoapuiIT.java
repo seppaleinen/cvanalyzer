@@ -32,6 +32,7 @@ public class SoapuiIT {
     @Test
     public void runSoapUITestSuites() throws Exception {
         runner = new SoapUITestCaseRunner();
+        runner.setSettingsFile("soapui-settings.xml");
         runner.setOutputFolder("target");
         runner.setProjectFile(SOAPTEST_PATH);
         runner.run();
@@ -40,6 +41,7 @@ public class SoapuiIT {
     @Test
     public void runSoapUISecuritySuites() throws Exception {
         runner = new SoapUISecurityTestRunner();
+        runner.setSettingsFile("soapui-settings.xml");
         runner.setOutputFolder("target");
         runner.setProjectFile(SOAPTEST_PATH);
         runner.run();
@@ -48,6 +50,7 @@ public class SoapuiIT {
     @Test
     public void runSoapUILoadSuites() throws Exception {
         runner = new SoapUILoadTestRunner();
+        runner.setSettingsFile("soapui-settings.xml");
         runner.setOutputFolder("target");
         runner.setProjectFile(SOAPTEST_PATH);
         runner.run();
