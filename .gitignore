@@ -5,6 +5,9 @@ dependency-reduced-pom.xml
 target/
 application*.log
 .DS_Store
+global-groovy.log
+soapui.log
+soapui-errors.log
 
 # Package Files #
 *.jar
