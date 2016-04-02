@@ -20,7 +20,7 @@ public class HelloWorldResourceTest {
             new DropwizardAppRule<DropwizardConfiguration>(DropwizardApplication.class, ResourceHelpers.resourceFilePath("hello-world.yml"));
 
     @Test
-    public void loginHandlerRedirectsAfterPost() {
+    public void checkHelloWorld_ExpectParameterAsResult() {
         Client client = new JerseyClientBuilder().build();
 
         Response response = client.target(

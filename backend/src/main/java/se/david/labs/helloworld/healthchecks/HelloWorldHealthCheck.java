@@ -2,7 +2,7 @@ package se.david.labs.helloworld.healthchecks;
 
 import com.codahale.metrics.health.HealthCheck;
 
-public class TemplateHealthCheck extends HealthCheck {
+public class HelloWorldHealthCheck extends HealthCheck {
     @Override
     protected Result check() throws Exception {
         final String saying = "TEST";

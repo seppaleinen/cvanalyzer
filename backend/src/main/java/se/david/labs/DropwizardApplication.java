@@ -4,7 +4,7 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import se.david.labs.helloworld.HelloWorldResource;
-import se.david.labs.helloworld.healthchecks.TemplateHealthCheck;
+import se.david.labs.helloworld.healthchecks.HelloWorldHealthCheck;
 
 public class DropwizardApplication extends Application<DropwizardConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -23,8 +23,8 @@ public class DropwizardApplication extends Application<DropwizardConfiguration> 
 
     public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment) throws Exception {
         final HelloWorldResource helloWorldResource = new HelloWorldResource();
-        final TemplateHealthCheck templateHealthCheck = new TemplateHealthCheck();
-        environment.healthChecks().register("template", templateHealthCheck);
+        final HelloWorldHealthCheck helloWorldHealthCheck = new HelloWorldHealthCheck();
+        environment.healthChecks().register("template", helloWorldHealthCheck);
         environment.jersey().register(helloWorldResource);
     }
 }
