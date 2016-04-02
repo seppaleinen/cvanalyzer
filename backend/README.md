@@ -20,6 +20,11 @@ To run mutation tests
 mvn clean install -Ppitest
 ```
 
+To run soapui tests
+```
+mvn clean install -Psoapui
+```
+
 To run server
 ```
 java -jar target/cvanalyzer-backend.jar server src/main/resources/cv.yml

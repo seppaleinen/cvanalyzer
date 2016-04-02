@@ -19,40 +19,30 @@ public class SoapuiIT {
     public static final DropwizardAppRule<DropwizardConfiguration> RULE =
             new DropwizardAppRule<DropwizardConfiguration>(DropwizardApplication.class, ResourceHelpers.resourceFilePath("cv-test.yml"));
 
-
-    private AbstractSoapUIRunner runner;
-    private static final String SOAPTEST_PATH = "src/test/resources/backend-soapui-test.xml";
-
     @Before
     public void setup() {
         System.setProperty("soapui.log4j.config", "target/test-classes/soapui-log4j.xml");
-        runner = null;
     }
 
     @Test
     public void runSoapUITestSuites() throws Exception {
-        runner = new SoapUITestCaseRunner();
-        runner.setSettingsFile("soapui-settings.xml");
-        runner.setOutputFolder("target");
-        runner.setProjectFile(SOAPTEST_PATH);
-        runner.run();
+        runSoapuiRunner(new SoapUITestCaseRunner());
     }
 
     @Test
     public void runSoapUISecuritySuites() throws Exception {
-        runner = new SoapUISecurityTestRunner();
-        runner.setSettingsFile("soapui-settings.xml");
-        runner.setOutputFolder("target");
-        runner.setProjectFile(SOAPTEST_PATH);
-        runner.run();
+        runSoapuiRunner(new SoapUISecurityTestRunner());
     }
 
     @Test
     public void runSoapUILoadSuites() throws Exception {
-        runner = new SoapUILoadTestRunner();
+        runSoapuiRunner(new SoapUILoadTestRunner());
+    }
+
+    private void runSoapuiRunner(AbstractSoapUIRunner runner) throws Exception {
         runner.setSettingsFile("soapui-settings.xml");
         runner.setOutputFolder("target");
-        runner.setProjectFile(SOAPTEST_PATH);
+        runner.setProjectFile("src/test/resources/backend-soapui-test.xml");
         runner.run();
     }
 }
