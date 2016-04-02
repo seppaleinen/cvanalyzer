@@ -1,10 +1,9 @@
-package se.david.labs;
+package se.david.labs.helloworld.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 
 public class Saying {
-    private long id;
     @Length(max = 3)
     private String content;
 
@@ -12,14 +11,8 @@ public class Saying {
         // Jackson deserialization
     }
 
-    public Saying(long id, String content) {
-        this.id = id;
+    public Saying(String content) {
         this.content = content;
-    }
-
-    @JsonProperty
-    public long getId() {
-        return id;
     }
 
     @JsonProperty
