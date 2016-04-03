@@ -1,4 +1,4 @@
-package se.david.labs;
+package se.david.cv.dropwizard;
 
 import io.dropwizard.Configuration;
 

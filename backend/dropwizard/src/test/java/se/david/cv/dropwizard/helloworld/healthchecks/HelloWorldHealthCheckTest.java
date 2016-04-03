@@ -1,9 +1,8 @@
-package se.david.labs.helloworld.healthchecks;
+package se.david.cv.dropwizard.helloworld.healthchecks;
 
 import com.codahale.metrics.health.HealthCheck;
 import org.junit.Before;
 import org.junit.Test;
-import se.david.labs.cv.healthchecks.CVHealthCheck;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

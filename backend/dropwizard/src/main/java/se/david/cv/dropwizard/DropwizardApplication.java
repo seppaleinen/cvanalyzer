@@ -1,13 +1,13 @@
-package se.david.labs;
+package se.david.cv.dropwizard;
 
 import com.codahale.metrics.health.HealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import se.david.labs.cv.CVResource;
-import se.david.labs.cv.healthchecks.CVHealthCheck;
-import se.david.labs.helloworld.HelloWorldResource;
-import se.david.labs.helloworld.healthchecks.HelloWorldHealthCheck;
+import se.david.cv.dropwizard.helloworld.HelloWorldResource;
+import se.david.cv.dropwizard.cv.CVResource;
+import se.david.cv.dropwizard.cv.healthchecks.CVHealthCheck;
+import se.david.cv.dropwizard.helloworld.healthchecks.HelloWorldHealthCheck;
 
 public class DropwizardApplication extends Application<DropwizardConfiguration> {
     public static void main(String[] args) throws Exception {

@@ -5,7 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.apache.tika.exception.TikaException;
 import org.xml.sax.SAXException;
-import se.david.labs.cv.parser.DocumentParser;
+import se.david.cv.dropwizard.cv.parser.DocumentParser;
 
 import java.io.IOException;
 import java.io.InputStream;

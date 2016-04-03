@@ -46,4 +46,4 @@ metrics:
   reporters:
     - type: log
       logger: metrics
-      markerName: se.david.labs.metrics
+      markerName: se.david.cvetrics

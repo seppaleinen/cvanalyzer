@@ -1,4 +1,4 @@
-package se.david.labs.cv.healthchecks;
+package se.david.cv.dropwizard.cv.healthchecks;
 
 import com.codahale.metrics.health.HealthCheck;
 import org.junit.Before;

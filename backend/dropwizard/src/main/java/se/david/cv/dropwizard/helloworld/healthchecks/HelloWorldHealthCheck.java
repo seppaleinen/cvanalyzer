@@ -1,4 +1,4 @@
-package se.david.labs.helloworld.healthchecks;
+package se.david.cv.dropwizard.helloworld.healthchecks;
 
 import com.codahale.metrics.health.HealthCheck;
 

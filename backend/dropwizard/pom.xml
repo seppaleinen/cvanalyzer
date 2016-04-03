@@ -40,7 +40,6 @@
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-parsers</artifactId>
@@ -63,8 +62,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- SOAPUI -->
@@ -123,7 +120,7 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>se.david.labs.DropwizardApplication</mainClass>
+                                    <mainClass>se.david.cv.dropwizard.DropwizardApplication</mainClass>
                                 </transformer>
                             </transformers>
                             <filters>
@@ -158,10 +155,10 @@
                         <version>1.1.9</version>
                         <configuration>
                             <targetClasses>
-                                <param>se.david.labs.*</param>
+                                <param>se.david.cv.*</param>
                             </targetClasses>
                             <targetTests>
-                                <param>se.david.labs.*</param>
+                                <param>se.david.cv.*</param>
                             </targetTests>
                             <mutators>
                                 <mutator>CONDITIONALS_BOUNDARY</mutator>

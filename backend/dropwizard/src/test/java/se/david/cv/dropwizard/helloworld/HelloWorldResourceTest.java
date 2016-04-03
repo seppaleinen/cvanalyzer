@@ -1,4 +1,4 @@
-package se.david.labs.cv;
+package se.david.cv.dropwizard.helloworld;
 
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
@@ -6,8 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
-import se.david.labs.DropwizardApplication;
-import se.david.labs.DropwizardConfiguration;
+import se.david.cv.dropwizard.DropwizardApplication;
+import se.david.cv.dropwizard.DropwizardConfiguration;
+import se.david.cv.dropwizard.helloworld.domain.Saying;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -15,7 +16,7 @@ import javax.ws.rs.core.Response;
 
 import static org.junit.Assert.assertEquals;
 
-public class CVResourceTest {
+public class HelloWorldResourceTest {
     @ClassRule
     public static final DropwizardAppRule<DropwizardConfiguration> RULE =
             new DropwizardAppRule<DropwizardConfiguration>(DropwizardApplication.class, ResourceHelpers.resourceFilePath("cv.yml"));
@@ -33,13 +34,14 @@ public class CVResourceTest {
     }
 
     @Test
-    public void ping_expects_pong() {
+    public void checkHelloWorld_ExpectParameterAsResult() {
         Response response = client.target(
-                String.format("http://localhost:%d/cv/ping", RULE.getLocalPort()))
+                String.format("http://localhost:%d/hello-world?name=Hello", RULE.getLocalPort()))
                 .request()
                 .get();
 
+
         assertEquals(200, response.getStatus());
-        assertEquals("pong", response.readEntity(String.class));
+        assertEquals("Hello", response.readEntity(Saying.class).getContent());
     }
 }

@@ -1,8 +1,8 @@
-package se.david.labs.helloworld;
+package se.david.cv.dropwizard.helloworld;
 
 import com.codahale.metrics.annotation.Timed;
-import se.david.labs.Resource;
-import se.david.labs.helloworld.domain.Saying;
+import se.david.cv.dropwizard.Resource;
+import se.david.cv.dropwizard.helloworld.domain.Saying;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

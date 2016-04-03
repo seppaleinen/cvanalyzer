@@ -1,4 +1,4 @@
-package se.david.labs;
+package se.david.cv.dropwizard;
 
 import com.eviware.soapui.tools.AbstractSoapUIRunner;
 import com.eviware.soapui.tools.SoapUILoadTestRunner;
@@ -6,13 +6,11 @@ import com.eviware.soapui.tools.SoapUISecurityTestRunner;
 import com.eviware.soapui.tools.SoapUITestCaseRunner;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
-import org.apache.log4j.Level;
-import org.apache.poi.hdf.extractor.SEP;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
-
-import java.util.logging.Logger;
+import se.david.cv.dropwizard.DropwizardApplication;
+import se.david.cv.dropwizard.DropwizardConfiguration;
 
 public class SoapuiIT {
     @ClassRule

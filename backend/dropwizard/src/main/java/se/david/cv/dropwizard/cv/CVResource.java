@@ -1,7 +1,7 @@
-package se.david.labs.cv;
+package se.david.cv.dropwizard.cv;
 
 import com.codahale.metrics.annotation.Timed;
-import se.david.labs.Resource;
+import se.david.cv.dropwizard.Resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
