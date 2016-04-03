@@ -11,17 +11,7 @@ import se.david.labs.helloworld.healthchecks.HelloWorldHealthCheck;
 
 public class DropwizardApplication extends Application<DropwizardConfiguration> {
     public static void main(String[] args) throws Exception {
-        String command = "server";
-        String configuration = DropwizardApplication.class.getResource("cv.yml") != null ?
-            DropwizardApplication.class.getResource("cv.yml").getPath() : null;
-
-        if(args.length > 0) {
-            command = args[0];
-        } if(args.length > 1) {
-            configuration = args[1];
-        }
-
-        new DropwizardApplication().run(command, configuration);
+        new DropwizardApplication().run(args);
     }
 
     @Override
