@@ -1,41 +1,17 @@
-
-# Logging settings.
-logging:
-
-  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
-  level: INFO
-
-  # Logger-specific levels.
-  loggers:
-
-    # Sets the level for 'com.example.app' to DEBUG.
-    com.example.app: DEBUG
-
-    # Redirects SQL logs to a separate file
-    org.hibernate.SQL:
-      level: DEBUG
-
-# Logback's Time Based Rolling Policy - archivedLogFilenamePattern: /tmp/application-%d{yyyy-MM-dd}.log.gz
-# Logback's Size and Time Based Rolling Policy -  archivedLogFilenamePattern: /tmp/application-%d{yyyy-MM-dd}-%i.log.gz
-# Logback's Fixed Window Rolling Policy -  archivedLogFilenamePattern: /tmp/application-%i.log.gz
-
-  appenders:
-    - type: console
-    - type: file
-      threshold: INFO
-      logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
-      currentLogFilename: application.log
-      archivedLogFilenamePattern: application-%d{yyyy-MM-dd}-%i.log.gz
-      archivedFileCount: 7
-      timeZone: UTC
-      maxFileSize: 10MB
-
 server:
 #  softNofileLimit: 1000
 #  hardNofileLimit: 1000
+  maxThreads: 1024
+  allowedMethods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+  rootPath: /*
   applicationConnectors:
     - type: http
       port: 8080
+      bindHost: 127.0.0.1
     #- type: https
     #  port: 8443
       #keyStorePath: example.keystore
@@ -52,8 +28,13 @@ server:
       #validateCerts: false
       #validatePeers: false
   requestLog:
-        appenders: []
+      # Logback's Time Based Rolling Policy - archivedLogFilenamePattern: /tmp/application-%d{yyyy-MM-dd}.log.gz
+      # Logback's Size and Time Based Rolling Policy -  archivedLogFilenamePattern: /tmp/application-%d{yyyy-MM-dd}-%i.log.gz
+      # Logback's Fixed Window Rolling Policy -  archivedLogFilenamePattern: /tmp/application-%i.log.gz
+      appenders: []
 
-#metrics:
-#  type: graphite
-#  frequency: 10s
+metrics:
+  reporters:
+    - type: log
+      logger: metrics
+      markerName: se.david.labs.metrics
