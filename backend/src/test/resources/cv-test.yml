@@ -9,7 +9,7 @@ logging:
   loggers:
 
     # Sets the level for 'com.example.app' to DEBUG.
-    com.example.app: ALL
+    com.example.app: DEBUG
 
     # Redirects SQL logs to a separate file
     org.hibernate.SQL:
@@ -20,6 +20,7 @@ logging:
 # Logback's Fixed Window Rolling Policy -  archivedLogFilenamePattern: /tmp/application-%i.log.gz
 
   appenders:
+    - type: console
     - type: file
       threshold: INFO
       logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
@@ -51,7 +52,7 @@ server:
       #validateCerts: false
       #validatePeers: false
   requestLog:
-      appenders: []
+        appenders: []
 
 #metrics:
 #  type: graphite

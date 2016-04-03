@@ -6,16 +6,19 @@ import com.eviware.soapui.tools.SoapUISecurityTestRunner;
 import com.eviware.soapui.tools.SoapUITestCaseRunner;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
+import org.apache.log4j.Level;
 import org.apache.poi.hdf.extractor.SEP;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 
+import java.util.logging.Logger;
+
 public class SoapuiIT {
     @ClassRule
     public static final DropwizardAppRule<DropwizardConfiguration> RULE =
             new DropwizardAppRule<DropwizardConfiguration>(DropwizardApplication.class, ResourceHelpers.resourceFilePath("cv-test.yml"));
-    
+
     private static final String SEPARATOR = System.getProperty("file.separator");
 
     private static final String SETTINGS_FILE = String.format("soapui%ssoapui-settings.xml",
