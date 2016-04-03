@@ -3,11 +3,9 @@ dependency-reduced-pom.xml
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 target/
-application*.log
+application*.log*
 .DS_Store
-global-groovy.log
-soapui.log
-soapui-errors.log
+*.log
 
 # Package Files #
 *.jar
