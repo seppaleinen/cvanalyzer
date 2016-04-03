@@ -22,6 +22,9 @@ import java.io.InputStream;
  * xml
  */
 public class DocumentParser {
+    public DocumentParser() {
+        System.setProperty("java.awt.headless", "true");
+    }
 
     public String parseExample(InputStream stream) throws TikaException, SAXException, IOException {
         AutoDetectParser parser = new AutoDetectParser();
