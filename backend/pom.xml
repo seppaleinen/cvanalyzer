@@ -40,6 +40,18 @@
             <version>${dropwizard.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers</artifactId>
+            <version>1.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>io.dropwizard</groupId>
@@ -78,6 +90,7 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
+            <!-- Package everything into a fat jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -106,6 +119,7 @@
     </build>
 
     <profiles>
+        <!-- Run mutation tests -->
         <profile>
             <id>pitest</id>
             <activation>
@@ -153,6 +167,7 @@
                 </plugins>
             </build>
         </profile>
+        <!-- Run soapui tests -->
         <profile>
             <id>soapui</id>
             <activation>
