@@ -34,6 +34,7 @@ public class SoapuiIT {
 
     @Before
     public void setup() {
+        System.setProperty("java.awt.headless", "true");
         System.setProperty("soapui.log4j.config", LOG4J_PATH);
     }
 

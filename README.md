@@ -21,7 +21,7 @@ Part of the system handling the client interface.
 
 * [AngularJS](https://angularjs.org/)
 * [ReactJS](http://reactjs.net/)
-* [Material UI](http://www.material-ui.com/#/)
+* [Material UI - CSS framework](http://www.material-ui.com/#/)
 
 ### Database
 
