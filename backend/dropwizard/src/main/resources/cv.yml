@@ -36,7 +36,7 @@ server:
         - type: file
           threshold: INFO
           logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
-          currentLogFilename: /tmp/cvanalyzer/application.log
+          currentLogFilename: /var/log/cvanalyzer/application.log
           archivedLogFilenamePattern: /tmp/cvanalyzer/application-%d{yyyy-MM-dd}-%i.log.gz
           archivedFileCount: 7
           timeZone: UTC
