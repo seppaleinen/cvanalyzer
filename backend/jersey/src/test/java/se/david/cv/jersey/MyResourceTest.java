@@ -4,7 +4,6 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-import se.david.cv.jersey.Main;
 import org.glassfish.grizzly.http.server.HttpServer;
 
 import org.junit.After;
@@ -33,7 +32,7 @@ public class MyResourceTest {
     }
 
     @Test
-    public void testGetIt() {
+    public void test_ping() {
         String responseMsg = target.path("ping").request().get(String.class);
         assertEquals("pong", responseMsg);
     }
