@@ -24,4 +24,4 @@ services:
     expose:
       - "8000"
     volumes:
-      - /etc/pki/tls/certs/:/etc/pki/tls/certs/
+      - /etc/pki/tls/certs/

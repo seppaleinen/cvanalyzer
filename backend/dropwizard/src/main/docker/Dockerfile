@@ -20,4 +20,3 @@ ADD filebeat.yml /etc/filebeat/filebeat.yml
 
 CMD sleep 30 && service filebeat restart && \
     java -Djava.security.egd=file:/dev/./urandom -jar /app.jar server cv.yml
-#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar", "server", "cv.yml"]
