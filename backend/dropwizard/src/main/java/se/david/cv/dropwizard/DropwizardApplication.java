@@ -4,10 +4,8 @@ import com.codahale.metrics.health.HealthCheck;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import se.david.cv.dropwizard.helloworld.HelloWorldResource;
 import se.david.cv.dropwizard.cv.CVResource;
 import se.david.cv.dropwizard.cv.healthchecks.CVHealthCheck;
-import se.david.cv.dropwizard.helloworld.healthchecks.HelloWorldHealthCheck;
 
 public class DropwizardApplication extends Application<DropwizardConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -19,7 +17,6 @@ public class DropwizardApplication extends Application<DropwizardConfiguration> 
     }
 
     public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment) throws Exception {
-        registerResource(environment, new HelloWorldResource(), new HelloWorldHealthCheck(), "helloWorld");
         registerResource(environment, new CVResource(), new CVHealthCheck(), "CV");
     }
 
