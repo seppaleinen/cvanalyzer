@@ -19,7 +19,7 @@
 
     <modules>
         <module>dropwizard</module>
-        <module>spark</module>
+        <module>jersey</module>
     </modules>
 
     <dependencyManagement>
