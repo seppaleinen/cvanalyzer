@@ -15,8 +15,6 @@ RUN apt-get update -y
 RUN apt-get install -y filebeat
 
 ADD filebeat.yml /etc/filebeat/filebeat.yml
-#ADD logstash-forwarder.crt /etc/pki/tls/certs/logstash-forwarder.crt
-#RUN service filebeat restart
 
-CMD sleep 30 && service filebeat restart && \
+CMD sleep 30 && service filebeat start && \
     java -Djava.security.egd=file:/dev/./urandom -jar /app.jar server cv.yml

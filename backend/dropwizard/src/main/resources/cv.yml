@@ -11,7 +11,7 @@ server:
   applicationConnectors:
     - type: http
       port: 8080
-      bindHost: 127.0.0.1
+      #bindHost: 127.0.0.1
     #- type: https
     #  port: 8443
       #keyStorePath: example.keystore
@@ -39,11 +39,17 @@ server:
           currentLogFilename: /var/log/cvanalyzer/application.log
           archivedLogFilenamePattern: /tmp/cvanalyzer/application-%d{yyyy-MM-dd}-%i.log.gz
           archivedFileCount: 7
-          timeZone: UTC
+          timeZone: Europe/Stockholm
           maxFileSize: 10MB
+        #- type: syslog
+        #  host: localhost
+        #  port: 514
+        #  facility: local0
+        #  threshold: ALL
+        #  stackTracePrefix: \t
 
 metrics:
   reporters:
     - type: log
       logger: metrics
-      markerName: se.david.cvetrics
+      markerName: se.david.cv.metrics
