@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://www.owasp.org/index.php/OWASP_Dependency_Check_Suppression">
+    <!--
+    <suppress>
+      <notes>
+        <![CDATA[
+            file name: some.jar
+        ]]>
+      </notes>
+        <sha1>66734244CE86857018B023A8C56AE0635C56B6A1</sha1>
+        <cpe>cpe:/a:apache:struts:2.0.0</cpe>
+    </suppress>
+    -->
+</suppressions>
