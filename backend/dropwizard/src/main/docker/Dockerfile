@@ -16,5 +16,5 @@ RUN apt-get install -y filebeat
 
 ADD filebeat.yml /etc/filebeat/filebeat.yml
 
-CMD sleep 30 && service filebeat start && \
+CMD service filebeat start && \
     java -Djava.security.egd=file:/dev/./urandom -jar /app.jar server cv.yml

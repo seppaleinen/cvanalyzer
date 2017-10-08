@@ -7,8 +7,8 @@ services:
     ports:
       - "8080:8080"
       - "8081:8081"
-    volumes:
-      - /var/log/cvanalyzer/:/var/log/cvanalyzer/
+    #volumes:
+    #  - /var/log/cvanalyzer/:/var/log/cvanalyzer/
     volumes_from:
       - elk
     links:
